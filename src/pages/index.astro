@@ -18,7 +18,7 @@ import "../styles/global.css";
 			Tu navegador no soporta videos HTML5.
 		</video>
 		<div
-			class="flex flex-col justify-center items-center gap-5 w-2/3 text-white"
+			class="flex flex-col justify-center items-center gap-5 w-2/3 text-white hideOnScroll"
 		>
 			<h1 class="text-5xl font-extrabold">SIPROIND</h1>
 			<h3 class="text-2xl text-center font-semibold">
@@ -35,12 +35,14 @@ import "../styles/global.css";
 				CONOZCA A <br /> SIPROIND
 			</h1>
 		</div>
-		<div class="flex">
-			<div class="w-1/2 flex flex-col justify-center items-center gap-4">
-				<h1 class="text-3xl font-semibold text-center w-2/3">
+		<div class="flex flex-col md:flex-row bg-[#F1EFEF] w-full">
+			<div
+				class="md:w-1/2 flex flex-col justify-center items-center gap-4 py-4 md:py-0"
+			>
+				<h1 class="text-3xl font-semibold text-center w-11/12">
 					Tus necesidades y objetivos son unicos para nuestro equipo
 				</h1>
-				<p class="text-xl font-light text-center w-2/3">
+				<p class="text-xl font-light text-center w-11/12">
 					Como empresa enfocada en ofrecer servicios de ingenieria
 					industrial, trabajamos con el propósito fundamental de dar
 					prioridad al contacto directo con el cliente y tener la
@@ -49,11 +51,57 @@ import "../styles/global.css";
 					Queremos ser tu partner de gestión industrial. Puedes
 					confiar en nosotros.
 				</p>
-				<button class="text-black border-2 rounded">Nosotros</button>
+				<button
+					class="border-2 rounded-lg bg-[#163d0f] text-white p-3 inline-block hover:bg-white hover:text-[#163d0f] duration-500"
+					>Nosotros</button
+				>
 			</div>
-			<div class="w-1/2">
-				<img src="/siproind_astro/img-descripcion.png" alt="" />
+			<div class="md:w-1/2">
+				<img
+					class=""
+					src="/siproind_astro/img-descripcion.png"
+					alt=""
+				/>
 			</div>
 		</div>
 	</section>
+	<script>
+		document.addEventListener("DOMContentLoaded", () => {
+			const elementsToObserve =
+				document.querySelectorAll(".hideOnScroll");
+
+			const observerOptions = {
+				root: null, // Usa el viewport
+				rootMargin: "-30% 0px -30% 0px",
+				threshold: [0.15, 0.2], // Intersección al 15% y 20%
+			};
+			const observer = new IntersectionObserver((entries) => {
+				entries.forEach((entry) => {
+					const targetElement = entry.target as HTMLElement; // Convertir el elemento a HTMLElement
+
+					if (entry.isIntersecting) {
+						targetElement.style.transition =
+							"opacity 0.5s ease-in-out";
+						targetElement.style.opacity = "1"; // Elemento entrando al viewport (Fade In)
+						console.log(
+							"Elemento entrando al viewport (Fade In):",
+							entry.target,
+						);
+					} else {
+						targetElement.style.transition =
+							"opacity 0.5s ease-in-out";
+						targetElement.style.opacity = "0"; // Elemento saliendo del viewport (Fade Out)
+						console.log(
+							"Elemento saliendo del viewport (Fade Out):",
+							entry.target,
+						);
+					}
+				});
+			}, observerOptions);
+
+			elementsToObserve.forEach((element) => {
+				observer.observe(element);
+			});
+		});
+	</script>
 </BaseLayout>

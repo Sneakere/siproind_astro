@@ -3,12 +3,12 @@
 ---
 
 <header
-    class="text-white py-4 border-b-2 border-green-500 bg-blend-overlay bg-black/60 fixed w-full"
+    class="text-white pt-4 md:pb-4 border-b-2 border-green-500 bg-blend-overlay bg-black/60 fixed w-full"
 >
     <div
         class="container mx-auto flex justify-between md:justify-center items-center w-11/12 md:w-full"
     >
-        <div class="md:hidden">
+        <div class="md:hidden pb-2">
             <img
                 alt="SIPROIND logo"
                 class="h-14"
@@ -21,7 +21,7 @@
                 id="menu-button"
             >
                 <svg
-                    class="icon icon-tabler icon-tabler-menu-2"
+                    class="icon icon-tabler icon-tabler-menu-2 pb-2"
                     width="44"
                     height="44"
                     viewBox="0 0 24 24"
@@ -54,11 +54,15 @@
             <a class="hover:text-gray-300" href="#"> Contacto </a>
         </div>
     </div>
-    <div id="mobile-menu" style="display: none;">
+    <div
+        class="backdrop-blur bg-transparent"
+        id="mobile-menu"
+        style="display: none;"
+    >
         <a class="block py-2 px-4 text-sm hover:bg-gray-700" href="#">
             Inicio
         </a>
-        <a class="block py-2 px-4 text-sm hover:bg-gray-700" href="#">
+        <a class="block py-2 px-4 text-sm hover:bg-gray-700" href="#acercade">
             Acerca de
         </a>
         <a class="block py-2 px-4 text-sm hover:bg-gray-700" href="#">
