@@ -1,16 +1,59 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro";
+const title = "SIPROIND";
+import "../styles/global.css";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title={title}>
+	<section
+		class="h-screen relative top-0 -z-10 flex flex-1 flex-col items-center justify-center border-b-2 border-green-500"
+	>
+		<video
+			autoplay
+			muted
+			loop
+			class="absolute top-0 left-0 w-full h-full object-cover -z-20"
+		>
+			<source src="/bg-main.mp4" type="video/mp4" />
+			Tu navegador no soporta videos HTML5.
+		</video>
+		<div
+			class="flex flex-col justify-center items-center gap-5 w-2/3 text-white"
+		>
+			<h1 class="text-5xl font-extrabold">SIPROIND</h1>
+			<h3 class="text-2xl text-center font-semibold">
+				En SIPROIND, nos esforzamos por alcanzar la excelencia en cada
+				aspecto de nuestro trabajo. Nos especializamos en proporcionar
+				soluciones personalizadas y de alta calidad en la Gestión de
+				Activos Industriales.
+			</h3>
+		</div>
+	</section>
+	<section id="acercade" class="h-[100dvh] scroll-mt-[5.625rem]">
+		<div class="flex items-center justify-center py-4">
+			<h1 class="text-6xl text-center font-semibold text-[#163d0f]">
+				CONOZCA A <br /> SIPROIND
+			</h1>
+		</div>
+		<div class="flex">
+			<div class="w-1/2 flex flex-col justify-center items-center gap-4">
+				<h1 class="text-3xl font-semibold text-center w-2/3">
+					Tus necesidades y objetivos son unicos para nuestro equipo
+				</h1>
+				<p class="text-xl font-light text-center w-2/3">
+					Como empresa enfocada en ofrecer servicios de ingenieria
+					industrial, trabajamos con el propósito fundamental de dar
+					prioridad al contacto directo con el cliente y tener la
+					solución adecuada para cada una de sus necesidades. Tus
+					necesidades y objetivos son únicos para nuestro equipo.
+					Queremos ser tu partner de gestión industrial. Puedes
+					confiar en nosotros.
+				</p>
+				<button class="text-black border-2 rounded">Nosotros</button>
+			</div>
+			<div class="w-1/2">
+				<img src="/img-descripcion.png" alt="" />
+			</div>
+		</div>
+	</section>
+</BaseLayout>

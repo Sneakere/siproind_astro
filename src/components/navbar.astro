@@ -1,0 +1,78 @@
+---
+
+---
+
+<header
+    class="text-white py-4 border-b-2 border-green-500 bg-blend-overlay bg-black/60 fixed w-full"
+>
+    <div
+        class="container mx-auto flex justify-between md:justify-center items-center w-11/12 md:w-full"
+    >
+        <div class="md:hidden">
+            <img alt="SIPROIND logo" class="h-14" src="/logo_sipro.png" />
+        </div>
+        <div class="flex items-center space-x-4">
+            <button
+                class="block md:hidden text-white focus:outline-none"
+                id="menu-button"
+            >
+                <svg
+                    class="icon icon-tabler icon-tabler-menu-2"
+                    width="44"
+                    height="44"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="#ffffff"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M4 6l16 0"></path>
+                    <path d="M4 12l16 0"></path>
+                    <path d="M4 18l16 0"></path>
+                </svg>
+            </button>
+            <div class="hidden md:flex space-x-8 px-6">
+                <a class="hover:text-gray-300" href="#"> Inicio </a>
+                <a class="hover:text-gray-300" href="#acercade"> Acerca de </a>
+            </div>
+        </div>
+        <div class="hidden md:block">
+            <img alt="SIPROIND logo" class="h-14" src="/logo_sipro.png" />
+        </div>
+        <div class="hidden md:flex space-x-8 px-6">
+            <a class="hover:text-gray-300" href="#"> Servicios </a>
+            <a class="hover:text-gray-300" href="#"> Contacto </a>
+        </div>
+    </div>
+    <div id="mobile-menu" style="display: none;">
+        <a class="block py-2 px-4 text-sm hover:bg-gray-700" href="#">
+            Inicio
+        </a>
+        <a class="block py-2 px-4 text-sm hover:bg-gray-700" href="#">
+            Acerca de
+        </a>
+        <a class="block py-2 px-4 text-sm hover:bg-gray-700" href="#">
+            Servicios
+        </a>
+        <a class="block py-2 px-4 text-sm hover:bg-gray-700" href="#">
+            Contacto
+        </a>
+    </div>
+</header>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document
+            .getElementById("menu-button")
+            .addEventListener("click", function () {
+                console.log("Clickeado hamburguesa");
+                var menu = document.getElementById("mobile-menu");
+                if (menu.style.display === "none") {
+                    menu.style.display = "block";
+                } else {
+                    menu.style.display = "none";
+                }
+            });
+    });
+</script>
