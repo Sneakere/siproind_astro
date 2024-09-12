@@ -9,6 +9,7 @@ import "../styles/global.css";
 		class="h-screen relative top-0 -z-10 flex flex-1 flex-col items-center justify-center border-b-2 border-green-500"
 	>
 		<video
+			id="bgVideo"
 			autoplay
 			muted
 			loop
@@ -18,10 +19,11 @@ import "../styles/global.css";
 			Tu navegador no soporta videos HTML5.
 		</video>
 		<div
-			class="flex flex-col justify-center items-center gap-5 w-2/3 text-white hideOnScroll"
+			class="flex flex-col justify-center items-center gap-5 w-2/3 text-white opacity-0 transition-opacity duration-3000 ease-in-out"
+			id="heroContent"
 		>
-			<h1 class="text-5xl font-extrabold">SIPROIND</h1>
-			<h3 class="text-2xl text-center font-semibold">
+			<h1 class="text-5xl font-extrabold hideOnScroll">SIPROIND</h1>
+			<h3 class="text-2xl text-center font-semibold hideOnScroll">
 				En SIPROIND, nos esforzamos por alcanzar la excelencia en cada
 				aspecto de nuestro trabajo. Nos especializamos en proporcionar
 				soluciones personalizadas y de alta calidad en la Gestión de
@@ -67,22 +69,29 @@ import "../styles/global.css";
 	</section>
 	<script>
 		document.addEventListener("DOMContentLoaded", () => {
+			const hideHero = document.getElementById("heroContent");
+			if (hideHero) {
+				setTimeout(() => {
+					hideHero.classList.remove("opacity-0");
+					hideHero.classList.add("opacity-100");
+				}, 300);
+			}
 			const elementsToObserve =
 				document.querySelectorAll(".hideOnScroll");
 
 			const observerOptions = {
 				root: null, // Usa el viewport
 				rootMargin: "-30% 0px -30% 0px",
-				threshold: [0.15, 0.2], // Intersección al 15% y 20%
+				threshold: [0.15, 0.2],
 			};
 			const observer = new IntersectionObserver((entries) => {
 				entries.forEach((entry) => {
-					const targetElement = entry.target as HTMLElement; // Convertir el elemento a HTMLElement
+					const targetElement = entry.target as HTMLElement;
 
 					if (entry.isIntersecting) {
 						targetElement.style.transition =
 							"opacity 0.5s ease-in-out";
-						targetElement.style.opacity = "1"; // Elemento entrando al viewport (Fade In)
+						targetElement.style.opacity = "1";
 						console.log(
 							"Elemento entrando al viewport (Fade In):",
 							entry.target,
@@ -90,7 +99,7 @@ import "../styles/global.css";
 					} else {
 						targetElement.style.transition =
 							"opacity 0.5s ease-in-out";
-						targetElement.style.opacity = "0"; // Elemento saliendo del viewport (Fade Out)
+						targetElement.style.opacity = "0";
 						console.log(
 							"Elemento saliendo del viewport (Fade Out):",
 							entry.target,
@@ -102,6 +111,12 @@ import "../styles/global.css";
 			elementsToObserve.forEach((element) => {
 				observer.observe(element);
 			});
+			const video = document.getElementById(
+				"bgVideo",
+			) as HTMLVideoElement;
+			if (video) {
+				video.playbackRate = 0.7;
+			}
 		});
 	</script>
 </BaseLayout>
