@@ -1,0 +1,35 @@
+name: Deploy Astro Site
+
+on:
+  push:
+    branches:
+      - main  # Reemplaza 'main' con el nombre de tu rama principal si es diferente
+  pull_request:
+    branches:
+      - main  # Reemplaza 'main' con el nombre de tu rama principal si es diferente
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out the repository
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'  # Reemplaza con la versión de Node.js que usas
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build the project
+      run: npm run build
+
+    - name: Deploy to GitHub Pages
+      if: github.ref == 'refs/heads/main'
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist  # Directorio de salida del proyecto Astro
