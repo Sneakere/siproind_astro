@@ -7,14 +7,21 @@ import "../styles/global.css";
 <BaseLayout title={title}>
     <section
         class="h-screen md:h-[50dvh] flex flex-1 justify-center items-center bg-[url('/siproind_astro/acercade-hero.jpg')] bg-blend-overlay bg-black/60 bg-fixed"
+        style="background-position-y: 100%;"
     >
-        <div class="flex flex-col justify-center items-center w-1/2 gap-6">
+        <div
+            id="heroContent"
+            class="flex flex-col justify-center items-center w-1/2 gap-6 opacity-0 duration-3000"
+        >
             <img
                 class="h-28 w-24"
                 src="/siproind_astro/logo_sipro.png"
                 alt=""
             />
-            <h1 class="text-4xl font-medium text-white text-center">
+            <h1
+                class="text-4xl font-medium text-white text-center"
+                id="titletohide"
+            >
                 Nuestro Sello
             </h1>
             <p class="text-xl md:text-2xl font-light text-center text-white">
@@ -28,7 +35,9 @@ import "../styles/global.css";
     <section
         class="h-screen md:h-[50dvh] flex flex-col items-center gap-4 pt-3"
     >
-        <h1 class="text-3xl font-medium p-5">Nuestros Valores</h1>
+        <h1 class="text-3xl font-medium p-5 text-[#163d0f]">
+            Nuestros Valores
+        </h1>
         <div class="flex flex-col md:gap-4">
             <div class="md:flex gap-4">
                 <div
@@ -136,4 +145,70 @@ import "../styles/global.css";
             </div>
         </div>
     </section>
+    <!-- <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const heroContent = document.getElementById("heroContent");
+            if (heroContent) {
+                setTimeout(() => {
+                    heroContent.classList.remove("opacity-0");
+                    heroContent.classList.add("opacity-100");
+                }, 300);
+            }
+        });
+        const observerOptions = {
+            root: null,
+            rootMargin: "0px",
+            threshold: 0.1,
+        };
+
+        const titleToHide = document.getElementById("titletohide");
+        const ocultarTitulo = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    titleToHide.style.opacity = "1"; // Mostrar título
+                } else {
+                    titleToHide.style.opacity = "0"; // Ocultar título
+                    titleToHide.style.transition = "opacity 0.5s ease"; // Transición suave
+                }
+            });
+        }, observerOptions);
+
+        // Observar el heroContent para detectar scroll
+        if (heroContent) {
+            ocultarTitulo.observe(heroContent);
+        }
+    </script> -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const heroContent = document.getElementById("heroContent");
+            const titleToHide = document.getElementById("titletohide");
+            if (heroContent) {
+                setTimeout(() => {
+                    heroContent.classList.remove("opacity-0");
+                    heroContent.classList.add("opacity-100");
+                }, 300);
+            }
+            const observerOptions = {
+                root: null,
+                rootMargin: "-20% 0px -30% 0px",
+                threshold: 0.1,
+            };
+            const ocultarTitulo = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        titleToHide.style.opacity = "1";
+                        console.log("Se ve");
+                    } else {
+                        titleToHide.style.opacity = "0";
+                        titleToHide.style.transition = "opacity 0.5s ease";
+                        console.log("No se ve");
+                    }
+                });
+            }, observerOptions);
+
+            if (heroContent) {
+                ocultarTitulo.observe(heroContent);
+            }
+        });
+    </script>
 </BaseLayout>
