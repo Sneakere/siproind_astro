@@ -6,7 +6,7 @@ import "../styles/global.css";
 
 <BaseLayout title={title}>
     <section
-        class="h-[50dvh] flex flex-1 justify-center items-center bg-[url('/siproind_astro/acercade-hero.jpg')] bg-blend-overlay bg-black/60 bg-fixed"
+        class="h-screen md:h-[50dvh] flex flex-1 justify-center items-center bg-[url('/siproind_astro/acercade-hero.jpg')] bg-blend-overlay bg-black/60 bg-fixed"
     >
         <div class="flex flex-col justify-center items-center w-1/2 gap-6">
             <img
@@ -14,7 +14,9 @@ import "../styles/global.css";
                 src="/siproind_astro/logo_sipro.png"
                 alt=""
             />
-            <h1 class="text-4xl font-medium text-white">Nuestro Sello</h1>
+            <h1 class="text-4xl font-medium text-white text-center">
+                Nuestro Sello
+            </h1>
             <p class="text-2xl font-light text-center text-white">
                 En SIPROIND, nuestra misión es convertirnos en Partner de
                 nuestros clientes, proporcionar soluciones integrales y
@@ -23,50 +25,105 @@ import "../styles/global.css";
             </p>
         </div>
     </section>
-    <section class="h-[50dvh] flex flex-col items-center gap-4 pt-3">
+    <section
+        class="h-screen md:h-[50dvh] flex flex-col items-center gap-4 pt-3"
+    >
         <h1 class="text-3xl font-medium">Nuestros Valores</h1>
-        <div class="flex flex-col gap-4">
-            <div class="flex gap-4">
+        <div class="flex flex-col md:gap-4">
+            <div class="md:flex gap-4">
                 <div
-                    class="h-40 w-96 border p-2 flex flex-col items-center gap-4"
+                    class="h-40 w-96 flex flex-col items-center gap-4 relative group"
                 >
-                    <h1 class="text-center text-xl">Excelencia</h1>
-                    <p class="text-center">
-                        Buscamos la excelencia en todo lo que hacemos,
-                        ofreciendo soluciones personalizadas y de calidad en
-                        Gestión de Activos industriales
-                    </p>
+                    <div
+                        id="exl-card"
+                        class="h-40 w-96 border border-green-500 flex items-center justify-center flex-col gap-3"
+                    >
+                        <h1 class="text-center text-2xl group-hover:hidden">
+                            Excelencia
+                        </h1>
+                        <img src="/siproind_astro/exelencia.png" alt="" />
+                    </div>
+                    <div
+                        id="exl-hidecard"
+                        class="flex items-center h-40 w-96 border p-2 absolute -bottom-full group-hover:backdrop-blur-[1px] group-hover:-translate-y-full group-hover:bg-transparent opacity-0 group-hover:opacity-100 ease-in-out duration-500"
+                    >
+                        <p class="text-center">
+                            Buscamos la excelencia en todo lo que hacemos,
+                            ofreciendo soluciones personalizadas y de calidad en
+                            Gestión de Activos industriales
+                        </p>
+                    </div>
                 </div>
                 <div
-                    class="h-40 w-96 border p-2 flex flex-col items-center gap-4"
+                    class="h-40 w-96 flex flex-col items-center gap-4 relative group"
                 >
-                    <h1 class="text-center text-xl">Innovacion</h1>
-                    <p class="text-center">
-                        Abrazamos la innovación y nos mantenemos a la vanguardia
-                        de las últimas tecnologías y mejores prácticas.
-                    </p>
+                    <div
+                        id="inn-card"
+                        class="h-40 w-96 border border-green-500 flex items-center justify-center flex-col gap-3"
+                    >
+                        <h1 class="text-center text-2xl group-hover:hidden">
+                            Innovacion
+                        </h1>
+                        <img src="/siproind_astro/inovacion.png" alt="" />
+                    </div>
+                    <div
+                        id="inn-hidecard"
+                        class="flex items-center h-40 w-96 border p-2 absolute -bottom-full group-hover:backdrop-blur-[1px] group-hover:-translate-y-full group-hover:bg-transparent opacity-0 group-hover:opacity-100 ease-in-out duration-500"
+                    >
+                        <p class="text-center">
+                            Abrazamos la innovación y nos mantenemos a la
+                            vanguardia de las últimas tecnologías y mejores
+                            prácticas.
+                        </p>
+                    </div>
                 </div>
             </div>
-            <div class="flex gap-4">
+            <div class="md:flex gap-4">
                 <div
-                    class="h-40 w-96 border p-2 flex flex-col items-center gap-4"
+                    class="h-40 w-96 flex flex-col items-center gap-4 relative group"
                 >
-                    <h1 class="text-center text-xl">Integridad</h1>
-                    <p class="text-center">
-                        Actuamos con honestidad y transparencia en todas
-                        nuestras operaciones promoviendo una cultura interna de
-                        ética y comunicación abierta.
-                    </p>
+                    <div
+                        id="int-card"
+                        class="h-40 w-96 border border-green-500 flex items-center justify-center flex-col gap-3"
+                    >
+                        <h1 class="text-center text-2xl group-hover:hidden">
+                            Integridad
+                        </h1>
+                        <img src="/siproind_astro/integridad.png" alt="" />
+                    </div>
+                    <div
+                        id="int-hidecard"
+                        class="flex items-center h-40 w-96 border p-2 absolute -bottom-full group-hover:backdrop-blur-[1px] group-hover:-translate-y-full group-hover:bg-transparent opacity-0 group-hover:opacity-100 ease-in-out duration-500"
+                    >
+                        <p class="text-center">
+                            Actuamos con honestidad y transparencia en todas
+                            nuestras operaciones promoviendo una cultura interna
+                            de ética y comunicación abierta.
+                        </p>
+                    </div>
                 </div>
                 <div
-                    class="h-40 w-96 border p-2 flex flex-col items-center gap-4"
+                    class="h-40 w-96 flex flex-col items-center gap-4 relative group"
                 >
-                    <h1 class="text-center text-xl">Colaboracion</h1>
-                    <p class="text-center">
-                        Valoramos la colaboración y trabajamos en estrecha
-                        colaboración con nuestros clientes para lograr
-                        resultados sobresalientes.
-                    </p>
+                    <div
+                        id="col-card"
+                        class="h-40 w-96 border border-green-500 flex items-center justify-center flex-col gap-3"
+                    >
+                        <h1 class="text-center text-2xl group-hover:hidden">
+                            Colaboracion
+                        </h1>
+                        <img src="/siproind_astro/colaboracion.png" alt="" />
+                    </div>
+                    <div
+                        id="col-hidecard"
+                        class="flex items-center h-40 w-96 border p-2 absolute -bottom-full group-hover:backdrop-blur-[1px] group-hover:-translate-y-full group-hover:bg-transparent opacity-0 group-hover:opacity-100 ease-in-out duration-500"
+                    >
+                        <p class="text-center">
+                            Valoramos la colaboración y trabajamos en estrecha
+                            colaboración con nuestros clientes para lograr
+                            resultados sobresalientes.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
