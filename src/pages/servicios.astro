@@ -1,0 +1,33 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const title = "Servicios";
+import "../styles/global.css";
+---
+
+<BaseLayout title={title}>
+    <section class="pt-24">
+        <div class="h-[40dvh]">
+            <h1 class="text-center text-4xl font-semibold py-4">
+                Áreas productivas donde aportamos soluciones sustentables
+            </h1>
+            <div class="flex justify-evenly">
+                <div
+                    class="border h-80 w-80 bg-[url('/siproind_astro/remanufactura.jpg')]"
+                >
+                </div>
+                <div
+                    class="border h-80 w-80 bg-[url('/siproind_astro/maderaaserrada.jpg')]"
+                >
+                </div>
+                <div
+                    class="border h-80 w-80 bg-[url('/siproind_astro/pesquera.jpg')]"
+                >
+                </div>
+                <div
+                    class="border h-80 w-80 bg-[url('/siproind_astro/fruticola.jpg')]"
+                >
+                </div>
+            </div>
+        </div>
+    </section>
+</BaseLayout>
