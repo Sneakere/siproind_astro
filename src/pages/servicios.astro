@@ -5,29 +5,109 @@ import "../styles/global.css";
 ---
 
 <BaseLayout title={title}>
-    <section class="pt-24">
-        <div class="h-[40dvh]">
+    <section class="pt-24 relative -z-10">
+        <div class="h-[60dvh] flex flex-col items-center">
             <h1 class="text-center text-4xl font-semibold py-4">
                 Áreas productivas donde aportamos soluciones sustentables
             </h1>
-            <div class="flex justify-evenly">
-                <div
-                    class="border h-80 w-80 bg-[url('/siproind_astro/remanufactura.jpg')]"
-                >
+            <div class="w-2/3 flex justify-evenly relative">
+                <div class="relative h-60 w-60">
+                    <div class="absolute h-60 w-60 z-10 overflow-hidden">
+                        <img
+                            class="h-full w-full scale-125"
+                            src="/siproind_astro/remanufactura.jpg"
+                            alt=""
+                        />
+                    </div>
+                    <div class="absolute w-28 top-10 bg-white right-44 z-20">
+                        <h1>Remanufactura</h1>
+                    </div>
+                </div>
+                <div class="relative h-60 w-60">
+                    <div class="absolute h-60 w-60 z-10 overflow-hidden">
+                        <img
+                            class="h-60 w-60"
+                            src="/siproind_astro/maderaaserrada.jpg"
+                            alt=""
+                        />
+                    </div>
+                    <div class="absolute w-28 top-10 bg-white right-44 z-20">
+                        <h1>Madera Aserrada</h1>
+                    </div>
+                </div>
+                <div class="relative h-60 w-60">
+                    <div class="absolute h-60 w-60 z-10 overflow-hidden">
+                        <img
+                            class="h-60 w-60"
+                            src="/siproind_astro/pesquera.jpg"
+                            alt=""
+                        />
+                    </div>
+                    <div class="absolute w-28 top-10 bg-white right-44 z-20">
+                        <h1>Pesquera</h1>
+                    </div>
+                </div>
+                <div class="relative h-60 w-60">
+                    <div class="absolute h-60 w-60 z-10 overflow-hidden">
+                        <img
+                            class="h-60 w-60"
+                            src="/siproind_astro/fruticola.jpg"
+                            alt=""
+                        />
+                    </div>
+                    <div class="absolute w-28 top-10 bg-white right-44 z-20">
+                        <h1>Fruticola</h1>
+                    </div>
                 </div>
                 <div
-                    class="border h-80 w-80 bg-[url('/siproind_astro/maderaaserrada.jpg')]"
-                >
-                </div>
-                <div
-                    class="border h-80 w-80 bg-[url('/siproind_astro/pesquera.jpg')]"
-                >
-                </div>
-                <div
-                    class="border h-80 w-80 bg-[url('/siproind_astro/fruticola.jpg')]"
+                    class="w-full h-8 bg-green-500 absolute top-[45%] -z-20 animate-widfull left-0"
                 >
                 </div>
             </div>
         </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const remanuhide = document.getElementById("remanuhide");
+                const maderaahide = document.getElementById("maderaahide");
+                const pesqhide = document.getElementById("pesqhide");
+                const frutihide = document.getElementById("frutihide");
+                const areas_productivas_hide = [
+                    remanuhide,
+                    maderaahide,
+                    pesqhide,
+                    frutihide,
+                ];
+                const areas_productivas = Array.from(
+                    document.querySelectorAll(
+                        "#remanu, #maderaa, #pesq, #fruti",
+                    ),
+                );
+
+                let i = 0;
+
+                const intervalo = setInterval(() => {
+                    areas_productivas_hide[i].classList.remove("hidedtitle");
+                    areas_productivas_hide[i].classList.add("showtitle");
+
+                    const img = areas_productivas[i].querySelector("img");
+                    img.classList.remove("scale-125");
+                    img.classList.add("scale-100");
+
+                    i++;
+
+                    if (i >= areas_productivas_hide.length) {
+                        clearInterval(intervalo);
+                    }
+                }, 700);
+            });
+        </script>
+        <style>
+            .hidedtitle {
+                display: none;
+            }
+            .showtitle {
+                display: block;
+            }
+        </style>
     </section>
 </BaseLayout>

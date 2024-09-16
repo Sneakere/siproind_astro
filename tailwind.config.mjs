@@ -8,9 +8,14 @@ export default {
 					'0%': { transform: 'translateY(-100%)' },
 					'100%': { transform: 'translateY(0)' },
 				},
+				widfull: {
+					'0%': { width: '0%' },
+					'100%': { width: '100%' },
+				}
 			},
 			animation: {
 				intro: 'intro 1s ease-out',
+				widfull: 'widfull 3s ease-in-out'
 			},
 			fontFamily: {
 				sans: ['Kanit', 'sans-serif'],
