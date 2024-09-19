@@ -5,137 +5,100 @@ import "../styles/global.css";
 ---
 
 <BaseLayout title={title}>
-    <section class="">
-        <div class="h-[60dvh] flex flex-col items-center relative">
-            <h1
-                class="text-center text-4xl font-semibold py-4 absolute z-10 top-24 text-white px-2 bg-green-400"
+    <section class="relative flex justify-center h-[60dvh]">
+        <h1
+            class="text-center text-2xl md:text-4xl font-semibold py-1 absolute z-10 text-black top-[10dvh] md:top-32 md:text-white px-2 bg-green-400 h-[10dvh] md:h-auto"
+        >
+            Áreas productivas donde aportamos soluciones sustentables
+        </h1>
+        <div
+            class="hero-container flex flex-col md:flex-row flex-nowrap absolute w-full top-[20dvh] md:top-0 md:h-[60dvh]"
+        >
+            <div
+                class="hero-item w-full md:w-[40dvw] -mr-[7.5vw] relative overflow-hidden"
             >
-                Áreas productivas donde aportamos soluciones sustentables
-            </h1>
-            <div class="hero-container flex flex-nowrap absolute w-full top-0">
-                <div
-                    class="hero-item w-[40dvw] h-[70dvh] -mr-[7.5vw] relative overflow-hidden"
-                    style="clip-path: polygon(0% 0%, 100% 0%, 75% 100%, 0% 100%);"
-                >
-                    <img
-                        class="w-full h-full object-cover scale-125 hover:scale-100"
-                        src="/siproind_astro/remanufactura_blacked.jpg"
-                        alt="Remanufactura"
-                    />
+                <img
+                    class="w-full h-full object-cover scale-125 hover:scale-100"
+                    src="/siproind_astro/remanufactura_blacked.jpg"
+                    alt="Remanufactura"
+                />
 
-                    <h1
-                        class="hero-title text-white text-xl md:text-3xl font-semibold absolute bottom-0 left-0 z-10 px-1 md:px-4"
-                    >
-                        Remanufactura
-                    </h1>
-                </div>
-
-                <div
-                    class="hero-item w-[40dvw] h-[70dvh] -mr-[7.5vw] relative overflow-hidden"
-                    style="clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);"
+                <h1
+                    class="hero-title text-white text-xl md:text-3xl font-semibold absolute bottom-0 left-0 z-10 px-1 md:px-4"
                 >
-                    <img
-                        class="w-full h-full object-cover duration-200 transition-transform transform scale-125 hover:scale-100"
-                        src="/siproind_astro/maderaaserrada_blacked.jpg"
-                        alt="Madera Aserrada"
-                    />
-                    <h1
-                        class="hero-title text-white text-xl md:text-3xl font-semibold absolute bottom-0 left-0 z-10 px-1 md:px-4"
-                    >
-                        Madera Aserrada
-                    </h1>
-                </div>
+                    Remanufactura
+                </h1>
+            </div>
 
-                <div
-                    class="hero-item w-[40dvw] h-[70dvh] -mr-[7.5vw] relative overflow-hidden"
-                    style="clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);"
+            <div
+                class="hero-item w-full md:w-[40dvw] -mr-[7.5vw] relative overflow-hidden"
+            >
+                <img
+                    class="w-full h-full object-cover duration-200 transition-transform transform scale-125 hover:scale-100"
+                    src="/siproind_astro/maderaaserrada_blacked.jpg"
+                    alt="Madera Aserrada"
+                />
+                <h1
+                    class="hero-title text-white text-xl md:text-3xl font-semibold absolute bottom-0 left-0 z-10 px-1 md:px-4"
                 >
-                    <img
-                        class="w-full h-full object-cover duration-200 transition-transform transform scale-125 hover:scale-100 relative z-5"
-                        src="/siproind_astro/pesquera_blacked.jpg"
-                        alt="Pesquera"
-                    />
-                    <h1
-                        class="hero-title text-white text-xl md:text-3xl font-semibold absolute bottom-0 left-0 z-10 px-1 md:px-4"
-                    >
-                        Pesquera
-                    </h1>
-                </div>
+                    Madera Aserrada
+                </h1>
+            </div>
 
-                <div
-                    class="hero-item w-[40dvw] h-[70dvh] relative overflow-hidden"
-                    style="clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);"
+            <div
+                class="hero-item w-full md:w-[40dvw] -mr-[7.5vw] relative overflow-hidden"
+            >
+                <img
+                    class="w-full h-full object-cover duration-200 transition-transform transform scale-125 hover:scale-100 relative z-5"
+                    src="/siproind_astro/pesquera_blacked.jpg"
+                    alt="Pesquera"
+                />
+                <h1
+                    class="hero-title text-white text-xl md:text-3xl font-semibold absolute bottom-0 left-0 z-10 px-1 md:px-4"
                 >
-                    <img
-                        class="w-full h-full object-cover duration-200 transition-transform transform scale-125 hover:scale-100"
-                        src="/siproind_astro/fruticola_blacked.jpg"
-                        alt="Frutícola"
-                    />
-                    <h1
-                        class="hero-title text-white text-xl md:text-3xl font-semibold absolute bottom-0 left-0 z-10 px-1 md:px-4"
-                    >
-                        Frutícola
-                    </h1>
-                </div>
+                    Pesquera
+                </h1>
+            </div>
+
+            <div class="hero-item w-full md:w-[40dvw] relative overflow-hidden">
+                <img
+                    class="w-full h-full object-cover duration-200 transition-transform transform scale-125 hover:scale-100"
+                    src="/siproind_astro/fruticola_blacked.jpg"
+                    alt="Frutícola"
+                />
+                <h1
+                    class="hero-title text-white text-xl md:text-3xl font-semibold absolute bottom-0 left-0 z-10 px-1 md:px-4"
+                >
+                    Frutícola
+                </h1>
             </div>
         </div>
     </section>
-    <section class="h-[100dvh]"></section>
-
-    <!-- <div class="w-2/3 flex justify-evenly relative flex-col md:flex-row">
-        <div class="relative h-60 w-60">
-            <div class="absolute h-60 w-60 z-10 overflow-hidden">
-                <img
-                    class="h-full w-full scale-125"
-                    src="/siproind_astro/remanufactura.jpg"
-                    alt=""
-                />
+    <section class="relative flex flex-col justify-center items-center gap-10">
+        <h1 class="text-3xl text-black font-semibold pt-8">
+            Nuestra línea de trabajo
+        </h1>
+        <h2 class="text-2xl font-semibold text-gray-700 text-center mb-6">
+            Nuestro enfoque integral abarca todas las etapas clave para
+            garantizar un servicio eficiente y de calidad, desde el análisis
+            inicial hasta el mantenimiento preventivo y correctivo de activos
+            industriales.
+        </h2>
+        <div class="flex w-full">
+            <div class="w-1/4 h-96 border flex items-center justify-center">
+                <h1>Análisis de Procesos</h1>
             </div>
-            <div class="absolute w-28 top-10 bg-white right-44 z-20">
-                <h1>Remanufactura</h1>
+            <div class="w-1/4 flex items-center justify-center">
+                <h1>Diseño de soluciones personalizadas</h1>
             </div>
-        </div>
-        <div class="relative h-60 w-60">
-            <div class="absolute h-60 w-60 z-10 overflow-hidden">
-                <img
-                    class="h-60 w-60"
-                    src="/siproind_astro/maderaaserrada.jpg"
-                    alt=""
-                />
+            <div class="w-1/4 flex items-center justify-center">
+                <h1>Gestión de Mantenimiento de activos industriales</h1>
             </div>
-            <div class="absolute w-28 top-10 bg-white right-44 z-20">
-                <h1>Madera Aserrada</h1>
+            <div class="w-1/4 flex items-center justify-center">
+                <h1>Mantención preventiva y correctiva</h1>
             </div>
         </div>
-        <div class="relative h-60 w-60">
-            <div class="absolute h-60 w-60 z-10 overflow-hidden">
-                <img
-                    class="h-60 w-60"
-                    src="/siproind_astro/pesquera.jpg"
-                    alt=""
-                />
-            </div>
-            <div class="absolute w-28 top-10 bg-white right-44 z-20">
-                <h1>Pesquera</h1>
-            </div>
-        </div>
-        <div class="relative h-60 w-60">
-            <div class="absolute h-60 w-60 z-10 overflow-hidden">
-                <img
-                    class="h-60 w-60"
-                    src="/siproind_astro/fruticola.jpg"
-                    alt=""
-                />
-            </div>
-            <div class="absolute w-28 top-10 bg-white right-44 z-20">
-                <h1>Fruticola</h1>
-            </div>
-        </div>
-        <div
-            class="h-full w-8 md:w-full md:h-8 bg-green-500 absolute top-[45%] -z-20 animate-widfull left-0"
-        >
-        </div>
-    </div>  -->
+    </section>
 </BaseLayout>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -152,9 +115,33 @@ import "../styles/global.css";
     });
 </script>
 <style>
+    .hero-item:nth-child(1) {
+        clip-path: polygon(0% 0%, 100% 0%, 75% 100%, 0% 100%);
+    }
+
+    .hero-item:nth-child(2) {
+        clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    }
+
+    .hero-item:nth-child(3) {
+        clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    }
+
+    .hero-item:nth-child(4) {
+        clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+
+    @media (max-width: 567px) {
+        .hero-item {
+            clip-path: none !important;
+            height: 10dvh;
+        }
+    }
+
     .hidedtitle {
         display: none;
     }
+
     .showtitle {
         display: block;
     }
