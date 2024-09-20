@@ -18,7 +18,7 @@ import "../styles/global.css";
                 class="hero-item w-full md:w-[40dvw] md:-mr-[7.5vw] relative overflow-hidden"
             >
                 <img
-                    class="w-full h-full object-cover scale-125 hover:scale-100"
+                    class="w-full h-full object-cover duration-500 scale-125 hover:scale-100"
                     src="/siproind_astro/remanufactura_blacked.jpg"
                     alt="Remanufactura"
                 />
@@ -34,7 +34,7 @@ import "../styles/global.css";
                 class="hero-item w-full md:w-[40dvw] md:-mr-[7.5vw] relative overflow-hidden"
             >
                 <img
-                    class="w-full h-full object-cover duration-200 transition-transform transform scale-125 hover:scale-100"
+                    class="w-full h-full object-cover duration-500 transition-transform transform scale-125 hover:scale-100"
                     src="/siproind_astro/maderaaserrada_blacked.jpg"
                     alt="Madera Aserrada"
                 />
@@ -49,7 +49,7 @@ import "../styles/global.css";
                 class="hero-item w-full md:w-[40dvw] md:-mr-[7.5vw] relative overflow-hidden"
             >
                 <img
-                    class="w-full h-full object-cover duration-200 transition-transform transform scale-125 hover:scale-100 relative z-5"
+                    class="w-full h-full object-cover duration-500 transition-transform transform scale-125 hover:scale-100"
                     src="/siproind_astro/pesquera_blacked.jpg"
                     alt="Pesquera"
                 />
@@ -62,7 +62,7 @@ import "../styles/global.css";
 
             <div class="hero-item w-full md:w-[40dvw] relative overflow-hidden">
                 <img
-                    class="w-full h-full object-cover duration-200 transition-transform transform scale-125 hover:scale-100"
+                    class="w-full h-full object-cover duration-500 transition-transform transform scale-125 hover:scale-100"
                     src="/siproind_astro/fruticola_blacked.jpg"
                     alt="Frutícola"
                 />
@@ -86,73 +86,84 @@ import "../styles/global.css";
                 activos industriales.
             </h2>
         </div>
-        <div class="flex w-11/12 h-[40dvh] gap-4">
+        <div
+            class="flex w-full md:w-11/12 flex-col md:flex-row md:h-[40dvh] md:gap-4"
+        >
             <div
-                class="w-1/4 flex flex-col items-center justify-center gap-5 px-2 text-center bg-[url(/siproind_astro/analisisprocesos.jpg)] bg-cover bg-blend-overlay bg-black/50 text-white group"
+                class="relative h-[30dvh] md:h-auto w-full md:w-1/4 flex flex-col justify-center px-2 py-2 text-center bg-[url(/siproind_astro/analisisprocesos.jpg)] bg-cover bg-blend-overlay bg-black/50 text-white group"
             >
-                <h1
-                    class="text-2xl transform transition-transform duration-700 group-hover:-translate-y-10"
-                >
-                    Análisis de Procesos
-                </h1>
-                <p
-                    class="transform translate-y-10 opacity-0 transition-all duration-700 group-hover:translate-y-0 group-hover:opacity-100"
-                >
-                    Identificación de áreas de mejora, cuellos de botella,
-                    ineficiencias y oportunidades para aumentar la productividad
-                    y reducir costos. Proyectos Green Belt-Six Sigma.
-                </p>
+                <div class="absolute md:top-1/2">
+                    <h1
+                        class="text-2xl transform transition-transform duration-700 group-hover:-translate-y-10"
+                    >
+                        Análisis de Procesos
+                    </h1>
+                    <p
+                        class="transform translate-y-10 opacity-0 transition-all duration-700 group-hover:translate-y-0 group-hover:opacity-100"
+                    >
+                        Identificación de áreas de mejora, cuellos de botella,
+                        ineficiencias y oportunidades para aumentar la
+                        productividad y reducir costos. Proyectos Green Belt-Six
+                        Sigma.
+                    </p>
+                </div>
             </div>
             <div
-                class="w-1/4 flex flex-col items-center justify-center gap-5 px-2 text-center bg-[url(/siproind_astro/disenopersonalizado.jpg)] bg-cover bg-blend-overlay bg-black/50 text-white group"
+                class="relative h-[30dvh] md:h-auto w-full md:w-1/4 flex flex-col items-center justify-center px-2 py-2 text-center bg-[url(/siproind_astro/disenopersonalizado.jpg)] bg-cover bg-blend-overlay bg-black/50 text-white group"
             >
-                <h1
-                    class="text-2xl transform transition-transform duration-700 group-hover:-translate-y-10"
-                >
-                    Diseño de soluciones personalizadas
-                </h1>
-                <p
-                    class="transform translate-y-10 opacity-0 transition-all duration-700 group-hover:translate-y-0 group-hover:opacity-100"
-                >
-                    Basados en el análisis de procesos diseñamos soluciones
-                    ingenieriles mecánicas a medida desde la concepción de una
-                    idea hasta la puesta en servicio y gestión de mantenimiento.
-                </p>
+                <div class="absolute md:top-1/2">
+                    <h1
+                        class="text-2xl transform transition-transform duration-700 group-hover:-translate-y-10"
+                    >
+                        Diseño de soluciones personalizadas
+                    </h1>
+                    <p
+                        class="transform translate-y-10 opacity-0 transition-all duration-700 group-hover:translate-y-0 group-hover:opacity-100"
+                    >
+                        Basados en el análisis de procesos diseñamos soluciones
+                        ingenieriles mecánicas a medida desde la concepción de
+                        una idea hasta la puesta en servicio y gestión de
+                        mantenimiento.
+                    </p>
+                </div>
             </div>
             <div
-                class="w-1/4 flex flex-col items-center justify-center gap-5 px-2 text-center bg-[url(/siproind_astro/mantenimiento.jpg)] bg-cover bg-blend-overlay bg-black/50 text-white group"
+                class="relative h-[30dvh] md:h-auto w-full md:w-1/4 flex flex-col items-center justify-center px-2 py-2 text-center bg-[url(/siproind_astro/mantenimiento.jpg)] bg-cover bg-blend-overlay bg-black/50 text-white group"
             >
-                <h1
-                    class="text-2xl transform transition-transform duration-700 group-hover:-translate-y-10"
-                >
-                    Gestión de Mantenimiento de activos industriales
-                </h1>
-                <p
-                    class="transform translate-y-10 opacity-0 transition-all duration-700 group-hover:translate-y-0 group-hover:opacity-100"
-                >
-                    Ofrecemos una variedad de servicios que aborden las
-                    necesidades de mantenimiento mejorando confiabilidad,
-                    disponibilidad y rendimiento de sus activos con un enfoque
-                    holístico que incluye análisis de necesidades, desarrollo de
-                    estrategias, implementación de sistemas, optimización de
-                    procesos y mejora continua.
-                </p>
+                <div class="absolute md:top-1/2">
+                    <h1
+                        class="text-2xl transform transition-transform duration-700 group-hover:-translate-y-8 md:group-hover:-translate-y-20"
+                    >
+                        Gestión de Mantenimiento de activos industriales
+                    </h1>
+                    <p
+                        class="transform translate-y-20 opacity-0 transition-all duration-700 group-hover:translate-y-0 md:group-hover:-translate-y-10 group-hover:opacity-100"
+                    >
+                        Ofrecemos servicios integrales de mantenimiento para
+                        mejorar la confiabilidad, disponibilidad y rendimiento
+                        de sus activos, abarcando análisis de necesidades,
+                        estrategias, implementación de sistemas, optimización y
+                        mejora continua.
+                    </p>
+                </div>
             </div>
             <div
-                class="w-1/4 flex flex-col items-center justify-center gap-5 px-2 text-center bg-[url(/siproind_astro/masmantencion.jpg)] bg-cover bg-blend-overlay bg-black/50 text-white group"
+                class="relative h-[30dvh] md:h-auto w-full md:w-1/4 flex flex-col items-center justify-center px-2 py-2 text-center bg-[url(/siproind_astro/masmantencion.jpg)] bg-cover bg-blend-overlay bg-black/50 text-white group"
             >
-                <h1
-                    class="text-2xl transform transition-transform duration-700 group-hover:-translate-y-10"
-                >
-                    Mantención preventiva y correctiva
-                </h1>
-                <p
-                    class="transform translate-y-10 opacity-0 transition-all duration-700 group-hover:translate-y-0 group-hover:opacity-100"
-                >
-                    Dotación de personal técnico y profesional calificado para
-                    labores de mantención preventiva y correctiva de cobertura
-                    temporal o indefinida.
-                </p>
+                <div class="absolute md:top-1/2">
+                    <h1
+                        class="text-2xl transform transition-transform duration-700 group-hover:-translate-y-10"
+                    >
+                        Mantención preventiva y correctiva
+                    </h1>
+                    <p
+                        class="transform translate-y-10 opacity-0 transition-all duration-700 group-hover:translate-y-0 group-hover:opacity-100"
+                    >
+                        Dotación de personal técnico y profesional calificado
+                        para labores de mantención preventiva y correctiva de
+                        cobertura temporal o indefinida.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
